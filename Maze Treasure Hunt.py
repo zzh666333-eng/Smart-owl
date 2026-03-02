@@ -646,7 +646,7 @@ class MazeGUI:
             self.plot_learning_curve()
 
     def plot_learning_curve(self):
-        """绘制学习曲线"""
+        #绘制学习曲线
         try:
             # 检测是否在Pygame环境中
             try:
@@ -744,7 +744,7 @@ class MazeGUI:
 
 
                 # 显示图表窗口
-                print("\n[Info] Displaying learning curve...")
+                print("\n[Info] Displaying learning curve")
                 print("[Info] Close the window to continue")
                 plt.show()
                 print(" Learning curve displayed successfully")
@@ -781,7 +781,7 @@ class MazeGUI:
 
                 # 保存并显示
                 plt.savefig('learning_curve.png', dpi=100, bbox_inches='tight')
-                print("\n" + "=" * 60)
+                
                 print(" Learning curve saved as 'learning_curve.png'")
 
 
@@ -793,18 +793,18 @@ class MazeGUI:
 
 
             # 打印最终总结
-            print("\n" + "=" * 60)
-            print("TRAINING SUMMARY / 训练总结")
-            print("=" * 60)
-            print(f"Total episodes / 总回合数: {len(self.agent.training_rewards)}")
-            print(f"Final average reward / 最终平均奖励: {np.mean(self.agent.training_rewards[-50:]):.2f}")
-            print(f"Final average steps / 最终平均步数: {np.mean(self.agent.training_steps[-50:]):.1f}")
-            print(f"Q-table size / Q表大小: {len(self.agent.q_table)}")
-            print("=" * 60)
+           
+            print("TRAINING SUMMARY ")
+            
+            print(f"Total episodes : {len(self.agent.training_rewards)}")
+            print(f"Final average reward : {np.mean(self.agent.training_rewards[-50:]):.2f}")
+            print(f"Final average steps : {np.mean(self.agent.training_steps[-50:]):.1f}")
+            print(f"Q-table size : {len(self.agent.q_table)}")
+           
 
         except Exception as e:
             print(f"\n[Error] Failed to plot learning curve: {e}")
-            print(f"[错误] 绘制学习曲线失败: {e}")
+            
 
 
 
@@ -973,4 +973,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
